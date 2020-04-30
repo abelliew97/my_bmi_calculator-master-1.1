@@ -26,7 +26,7 @@ class _HistoryPageState extends State<HistoryPage> {
       body: ConstrainedBox(
           constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.9, minHeight: 0),
           child: FirestoreAnimatedList(
-            physics: NeverScrollableScrollPhysics(),
+            physics: BouncingScrollPhysics(),
             shrinkWrap: true,
             query: _queryHistory,
             onLoaded: (snapshot) =>
