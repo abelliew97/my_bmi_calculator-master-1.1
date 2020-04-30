@@ -13,6 +13,7 @@ class _HistoryPageState extends State<HistoryPage> {
   Stream<QuerySnapshot> get _queryHistory =>
       _firestore.collection('history')
           .where('userEmail', isEqualTo: email)
+          .orderBy('date', descending: true)
           .snapshots();
 
   @override
